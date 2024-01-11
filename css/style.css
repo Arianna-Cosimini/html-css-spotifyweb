@@ -3,3 +3,33 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+body{
+    font-family: sans-serif;
+}
+
+#hero{
+    display: flex;
+    padding: 20px;
+    min-height: calc(100vh - 90px);
+
+    background-color: black;
+
+
+}
+
+/* inizio sidebar */
+
+#sidebar{
+
+    min-height: 1010px;
+    /* test */
+
+    display: flex;
+    flex-direction: column;
+
+    width: 227px;
+
+}
+
+/* fine sidebar */
