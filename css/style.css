@@ -6,8 +6,17 @@
 
 body{
     font-family: sans-serif;
+    -ms-overflow-style: none;
+    
 }
 
+body::-webkit-scrollbar {
+    width: 0; 
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: transparent; 
+}
 
 
 #hero{
@@ -64,8 +73,28 @@ main {
     color: white;
 
     padding: 90px 20px 20px;
+    overflow-y: auto;
 
 }
+/* modifica scrollbar */
+main::-webkit-scrollbar {
+    width: 12px; 
+}
+
+
+main::-webkit-scrollbar-thumb {
+    background-color: #282828; 
+    border-radius: 6px; 
+}
+
+main::-webkit-scrollbar-track {
+    background-color:black;
+}
+
+/* fine modifica scrollbar */
+
+
+
 .top-bar{
 
     display: flex;
@@ -124,12 +153,15 @@ main {
     flex-direction: column;
     gap: 16px;
     
+    overflow-y: auto;
     
     /* margin-left: 247px;
     height: calc(100vh - 90px);
     overflow: auto; */
 
 }
+
+
 
 
 
