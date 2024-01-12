@@ -68,6 +68,12 @@ body::-webkit-scrollbar-thumb {
     
 }
 
+.logo-small{
+    max-width: 20px;
+    display: none;
+    
+}
+
 .sidebar-menu ul{
     display: flex;
     flex-direction: column;
@@ -134,8 +140,23 @@ body::-webkit-scrollbar-thumb {
 }
 
 .playlist-links{
+    max-height: 200px;
     overflow-y: auto;
     /* height: calc(100% - 90px); */
+}
+
+.playlist-links::-webkit-scrollbar {
+    width: 12px; 
+}
+
+
+.playlist-links::-webkit-scrollbar-thumb {
+    background-color: #282828; 
+    border-radius: 6px; 
+}
+
+.playlist-links::-webkit-scrollbar-track {
+    background-color:black;
 }
 
 .playlist-links ul{
@@ -147,6 +168,7 @@ body::-webkit-scrollbar-thumb {
 .sidebar-bottom{
     display: flex;
     flex-direction: column;
+    /* align-items: center; */
     
 }
 
@@ -368,6 +390,49 @@ main::-webkit-scrollbar-track {
 /* media query tablet */
 
 @media screen and (max-width: 768px) {
+    #sidebar{
+        align-items: center;
+        width:50px;
+        padding: 10px ;
+
+    }
+
+    #sidebar a,
+    #sidebar .logo-sidebar img, 
+    #sidebar h3,
+    #sidebar strong,
+    .btn-playlist .fa-solid {
+        display: none;
+    }
+
+    .sidebar-nav{
+        gap: 0;
+    }
+
+    .logo-small{
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .playlist-links{
+        overflow: hidden;
+    }
+
+    .sidebar-bottom{
+        align-items: center;
+    }
+
+    .install-app{
+        gap: 0;
+
+        border-bottom: 0;
+        /* display: none; */
+    }
+
+    main{
+        width: 100%;
+    }
+       
         .card{
         width: calc(100% / 2 - 16px / 2);
     }
@@ -377,11 +442,24 @@ main::-webkit-scrollbar-track {
 
 /* media query smartphone */
 @media screen and (max-width: 370px) {
+   
     .top-bar{
         padding: 5px;
     }
     .top-bar-btn{
         padding: 5px;
+        text-align: center;
+    }
+
+    .row-cards{
+        justify-content: center;
+    }
+
+    .text-row{
+        align-items: center;
+    }
+
+    .row p{
         text-align: center;
     }
     .card{
