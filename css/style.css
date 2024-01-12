@@ -35,10 +35,11 @@ body::-webkit-scrollbar-thumb {
 /* inizio sidebar */
 
 #sidebar{
-
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    justify-content: space-between;
+
+    
     padding: 20px;
    
     width: 230px;
@@ -47,6 +48,17 @@ body::-webkit-scrollbar-thumb {
     background-color: black;
 
    
+
+}
+
+.sidebar-nav{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.fa-solid, .fa-regular{
+    color: #6c6c6c;
 
 }
 
@@ -63,17 +75,21 @@ body::-webkit-scrollbar-thumb {
 }
 
 .sidebar-menu ul li{
+    display: flex;
+    gap: 10px;
+    align-items: center;
     list-style-type: none;
     
 }
 
 .sidebar-menu .fa-solid{
+    
     font-size: 20px;
-    color: #6c6c6c;
 
 }
 
-.sidebar-menu a{
+#sidebar a{
+    
     text-decoration: none;
     color: #6c6c6c;
 }
@@ -84,11 +100,9 @@ body::-webkit-scrollbar-thumb {
 
 }
 
-.playlist{
-    display: flex;
-    flex-direction: column;
-    
-}
+
+
+
 
 .playlist h3{
     text-transform: uppercase;
@@ -96,10 +110,68 @@ body::-webkit-scrollbar-thumb {
 
 }
 
+.create-playlist{
+    
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+}
+
+
+
 .playlist .fa-solid{
+    
+    font-size: 35px;
     color: #6c6c6c;
 
 }
+
+.btn-playlist{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.playlist-links{
+    overflow-y: auto;
+    /* height: calc(100% - 90px); */
+}
+
+.playlist-links ul{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar-bottom{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.install-app{
+    display: flex;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #6c6c6c ;
+}
+
+.authors{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 15px;
+}
+
+.sidebar-bottom .fa-solid{
+    font-size: 25px;
+}
+
+.sidebar-bottom strong{
+    color: white;
+}
+
 /* fine sidebar */
 
 /* Inizio main */
