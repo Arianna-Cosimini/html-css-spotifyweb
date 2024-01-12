@@ -35,28 +35,71 @@ body::-webkit-scrollbar-thumb {
 /* inizio sidebar */
 
 #sidebar{
-    background-color: #1d9b38;
-    /* test */
-    width: 230px;
-    height: 100%;
-
-    /* position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    z-index: 2;
 
     display: flex;
     flex-direction: column;
+    gap: 30px;
     padding: 20px;
-
-
+   
     width: 230px;
+    height: 100%;
 
-    background-color: black; */
+    background-color: black;
+
+   
 
 }
 
+.logo-sidebar  {
+    
+    max-width: 130px;
+    
+}
+
+.sidebar-menu ul{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar-menu ul li{
+    list-style-type: none;
+    
+}
+
+.sidebar-menu .fa-solid{
+    font-size: 20px;
+    color: #6c6c6c;
+
+}
+
+.sidebar-menu a{
+    text-decoration: none;
+    color: #6c6c6c;
+}
+
+.sidebar-menu li img{
+
+    width: 20px;
+
+}
+
+.playlist{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.playlist h3{
+    text-transform: uppercase;
+    color: white;
+
+}
+
+.playlist .fa-solid{
+    color: #6c6c6c;
+
+}
 /* fine sidebar */
 
 /* Inizio main */
