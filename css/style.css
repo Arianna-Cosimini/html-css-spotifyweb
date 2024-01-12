@@ -50,7 +50,7 @@ body{
 
 /* fine sidebar */
 
-/* Inizio container */
+/* Inizio main */
 
 main {
     background-color: #183d1d;
@@ -189,7 +189,7 @@ main {
     object-fit: cover;
 }
 
-/* Fine container */
+/* Fine main */
 
 /* inizio bottom-bar */
 
@@ -208,7 +208,7 @@ main {
 /* fine bottom-bar */
 
 
-/* media query tablet */
+/* media query laptop*/
 
 @media screen and (max-width: 992px){
         .card{
@@ -216,10 +216,34 @@ main {
     }
 }
 
+/* fine madia query laptop */
+
+/* media query tablet */
+
 @media screen and (max-width: 768px) {
         .card{
         width: calc(100% / 2 - 16px / 2);
     }
 }
+
+/* fine media query tablet */
+
+/* media query smartphone */
+@media screen and (max-width: 370px) {
+    .top-bar{
+        padding: 5px;
+    }
+    .top-bar-btn{
+        padding: 5px;
+        text-align: center;
+    }
+    .card{
+    width: 100%
+    }
+
+
+}
+
+/* fine media query smartphone */
 
     
