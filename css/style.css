@@ -38,18 +38,35 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 30px;
 
     
     padding: 20px;
     padding-bottom: 5px;
    
-    width: 230px;
-    height: 100%;
+    min-width: 230px;
+    
+
+    overflow-y: auto;
 
     background-color: black;
 
    
 
+}
+
+#sidebar::-webkit-scrollbar {
+    width: 0px; 
+}
+
+
+#sidebar::-webkit-scrollbar-thumb {
+    background-color: #282828; 
+    border-radius: 6px; 
+}
+
+#sidebar::-webkit-scrollbar-track {
+    background-color:black;
 }
 
 .sidebar-nav{
@@ -70,7 +87,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 .logo-small{
-    max-width: 20px;
+    width: 20px;
+    margin-bottom: 15px;
     display: none;
     
 }
@@ -147,7 +165,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .playlist-links::-webkit-scrollbar {
-    width: 12px; 
+    width: 2px; 
 }
 
 
@@ -245,7 +263,7 @@ main::-webkit-scrollbar-track {
     right: 0;
 
     height: 90px;
-    width: calc(100% - 230px);
+    width: calc(100vw - 230px);
 
     background-color: rgba(0, 0, 0, 0.4);
 
@@ -282,6 +300,7 @@ main::-webkit-scrollbar-track {
 
 .nav-links ul li{
     list-style-type: none;
+    font-size: 2em;
 }
 
 
@@ -347,10 +366,12 @@ main::-webkit-scrollbar-track {
 .card-text h3{
     color: white;
     margin-bottom: 10px;
+
+    font-size: 1.1em;
 }
 
 .card-text p{
-    
+    font-size: 0.8em;
 }
 
 .bottom-row.row .card img{
@@ -456,20 +477,96 @@ main::-webkit-scrollbar-track {
     
 }
 
+.player-bar-progress{
+    display: flex;
+}
+
+.bottom-player .progress-bar{
+    position: relative;
+    width: 30vw;
+}
+
+.player-bar .progress .fa-solid{
+    position: absolute;
+    right: 0;
+    top: 0;
+
+}
+
  .progress-bar {
-   
-     min-width: 430px;
      height: 4px;
      background-color: #555;
      border-radius: 5px;
  }
 
 .progress {
+    position: relative;
+    display: flex;
+    justify-content: center;
     height: 100%;
     max-width: 80px;
     background-color: #c0c0c0;
     border-radius: 5px;
+
+   
 }
+
+.minutes{
+    position: relative;
+    min-width: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.progress:hover{
+    background-color: #bbf458;
+}
+
+/* stilizzazione input range */
+
+
+input[type="range"] {
+    -webkit-appearance: none;
+    position: absolute;
+    width: 80px;
+    height: 5px;
+    background-color: #c0c0c0;
+   
+    border-radius: 5px;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+input[type="range"]:hover {
+    background-color: #bbf458;
+    opacity: 1;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: transparent; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    background: white; 
+}
+
+/* fine stilizzazione input range */
+
+
+
+
+
+
 
 .sound-bar {
     display: flex;
@@ -512,6 +609,8 @@ main::-webkit-scrollbar-track {
         .card{
         width: calc(100% / 4 - 16px / 4 * 3 );
     }
+
+  
 }
 
 /* fine madia query laptop */
@@ -519,48 +618,28 @@ main::-webkit-scrollbar-track {
 /* media query tablet */
 
 @media screen and (max-width: 768px) {
-    #sidebar{
-        align-items: center;
-        width:50px;
-        padding: 10px ;
-
-    }
+   
 
     .top-bar{
-        width:calc(100% - 45px);
+        width:calc(100vw - 230px);
         padding-right: 10px;
     }
 
-    #sidebar a,
-    #sidebar .logo-sidebar img, 
-    #sidebar h3,
-    #sidebar strong,
-    .btn-playlist .fa-solid {
+   
+    .logo-small{
         display: none;
     }
 
     .sidebar-nav{
-        gap: 0;
+        gap: 30px;
     }
 
-    .logo-small{
-        margin-bottom: 10px;
-        display: block;
-    }
-
-    .playlist-links{
-        overflow: hidden;
-    }
-
-    .sidebar-bottom{
-        align-items: center;
-    }
 
     .install-app{
-        gap: 0;
+        
 
         border-bottom: 0;
-        /* display: none; */
+      
     }
 
     main{
@@ -571,28 +650,48 @@ main::-webkit-scrollbar-track {
         width: calc(100% / 2 - 16px / 2);
     }
 
-    .bottom-player{
-        max-width: 100%;
+    .bottom-icon{
+        flex-direction: column;
     }
 
-    .progress-bar{
-        width: 100%;
+    .player-bar{
+        gap: 10px;
     }
 
-   
-
-    /* .player-bar{
-        width: 100%;
-    } */
 }
 
 /* fine media query tablet */
 
 /* media query smartphone */
-@media screen and (max-width: 370px) {
+@media screen and (max-width: 576px) {
     
     #sidebar{
-        width: 50px;
+        min-width: 50px;
+        
+    }
+
+    .sidebar-nav{
+        gap: 0;
+    }
+
+    #sidebar a,
+    #sidebar .logo-sidebar img, 
+    #sidebar h3,
+    #sidebar strong,
+    .btn-playlist .fa-solid {
+        display: none;
+    }
+
+    .logo-small{
+        display: block;
+    }
+
+    .playlist-links::-webkit-scrollbar {
+        width: 0;
+    }
+
+    .install-app{
+        border-bottom: 0;
     }
     .top-bar{
         width:calc(100% - 45px);
@@ -616,6 +715,19 @@ main::-webkit-scrollbar-track {
     }
     .card{
     width:calc(100% / 2 - 16px)
+    }
+
+    .bottom-icon{
+        flex-direction: column;
+    }
+
+    .bottom-bar-left,
+    .sound-bar{
+        gap: 5px;
+    }
+
+    .player-bar{
+        gap: 5px;
     }
 
 
