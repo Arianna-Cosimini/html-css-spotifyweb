@@ -354,9 +354,39 @@ main::-webkit-scrollbar-track {
     max-width: 200px;
 }
 
+.card .fa-regular{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%,-50%);
+
+    font-size: 60px;
+    color: white;
+
+    opacity: 0;
+}
+
+.card-img{
+    position: relative;
+
+    transition: 0.3s;
+
+}
+
 .card img{
+
     margin-bottom: 20px;
     width: 100%;
+}
+
+.card-img:hover img{
+    filter: grayscale(100%);
+}
+
+.card .card-img:hover .fa-regular{
+    opacity: 1;
+    z-index: 1;
 }
 
 .card-text{
@@ -477,9 +507,7 @@ main::-webkit-scrollbar-track {
     
 }
 
-.player-bar-progress{
-    display: flex;
-}
+
 
 .bottom-player .progress-bar{
     position: relative;
@@ -499,29 +527,12 @@ main::-webkit-scrollbar-track {
      border-radius: 5px;
  }
 
-.progress {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    max-width: 80px;
-    background-color: #c0c0c0;
-    border-radius: 5px;
-
-   
-}
-
-.minutes{
-    position: relative;
-    min-width: 80px;
-    display: flex;
-    justify-content: center;
-}
 
 
-.progress:hover{
-    background-color: #bbf458;
-}
+
+
+
+
 
 /* stilizzazione input range */
 
@@ -594,11 +605,8 @@ input[type="range"]::-webkit-slider-thumb:hover {
     
 }
 
-.sound-bar .progress {
-    height: 100%;
-    max-width: 22px;
-    background-color: #c0c0c0;
-    border-radius: 5px;
+.sound-bar input[type="range"]{
+    width: 50px;
 }
 /* fine bottom-bar */
 
