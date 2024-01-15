@@ -81,6 +81,10 @@ body::-webkit-scrollbar-thumb {
     gap: 30px;
 }
 
+.sidebar-menu img{
+    filter: brightness(40%) grayscale(70%) sepia(40%) hue-rotate(180deg);
+}
+
 .fa-solid, .fa-regular{
     color: #6c6c6c;
 
@@ -99,6 +103,8 @@ body::-webkit-scrollbar-thumb {
     
 }
 
+
+
 .sidebar-menu ul{
     display: flex;
     flex-direction: column;
@@ -110,16 +116,23 @@ body::-webkit-scrollbar-thumb {
     gap: 10px;
     align-items: center;
     list-style-type: none;
+
     
 }
 
-.sidebar-menu .fa-solid{
-    
-    font-size: 20px;
+.sidebar-menu ul li:hover{
+    padding-left: 4px;
+    border-left: 2px solid #bbf458;
 
 }
 
-#sidebar a{
+.sidebar-menu ul li:hover a {
+    color: white;
+}
+
+
+
+.sidebar-menu ul li a{
     
     text-decoration: none;
     color: #6c6c6c;
@@ -131,18 +144,26 @@ body::-webkit-scrollbar-thumb {
 
 }
 
-.sidebar-menu li img:hover{
+.sidebar-menu li:hover img{
     filter: grayscale(1);
 }
 
-#sidebar a:hover{
-    color: white;
 
+
+
+
+.playlist{
+    color: #6c6c6c;
 }
 
+.playlist .btn-playlist a{
+    color: inherit;
+    text-decoration: none;
+}
 
-
-
+.playlist .btn-playlist:hover a{
+    color: white;
+}
 
 .playlist h3{
     text-transform: uppercase;
@@ -160,14 +181,14 @@ body::-webkit-scrollbar-thumb {
 
 
 
-.playlist .fa-solid{
+.playlist .btn-playlist .fa-solid{
     
     font-size: 35px;
     color: #6c6c6c;
 
 }
 
-.playlist .fa-solid:hover{
+.playlist .btn-playlist:hover .fa-solid{
     color: white;
 }
 
@@ -180,6 +201,15 @@ body::-webkit-scrollbar-thumb {
 .playlist-links{
     max-height: 200px;
     overflow-y: auto;
+}
+
+.playlist-links a{
+    color: #6c6c6c;
+    text-decoration: none;
+}
+
+.playlist-links a:hover{
+    color: white;
 }
 
 .playlist-links::-webkit-scrollbar {
@@ -206,14 +236,33 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     flex-direction: column;
     
+    
 }
 
 .install-app{
     display: flex;
+    align-items: center;
     gap: 10px;
     padding: 10px 0;
     border-bottom: 1px solid #6c6c6c ;
 }
+
+.install-app img{
+    height: 12px;
+}
+
+.install-app:hover img{
+    filter: grayscale(1);
+}
+.install-app a{
+    color: #6c6c6c;
+    text-decoration: none;
+}
+
+.install-app:hover a{
+    color: white;
+}
+
 
 .authors{
     display: flex;
@@ -222,9 +271,19 @@ body::-webkit-scrollbar-thumb {
     padding-top: 15px;
 }
 
-.sidebar-bottom .fa-solid{
-    font-size: 25px;
+.authors img{
+    width: 25px;
+    height: 25px;
+
+    object-fit: cover;
+    object-position: top;
+
+    background-color: #808080;
+
+    border-radius: 50%;
 }
+
+
 
 .sidebar-bottom strong{
     color: white;
@@ -253,7 +312,9 @@ main {
 /* modifica scrollbar */
 main::-webkit-scrollbar {
     width: 12px; 
+
 }
+
 
 
 main::-webkit-scrollbar-thumb {
@@ -525,7 +586,7 @@ li:hover hr {
     align-items: center;
     gap: 20px;
 
-    max-width: 430px;
+    width: 40vw;
 }
 
 .player-icon{
@@ -555,7 +616,7 @@ li:hover hr {
 
 .bottom-player .progress-bar{
     position: relative;
-    width: 20vw;
+    width: 30vw;
 }
 
 .player-bar .progress .fa-solid{
@@ -584,18 +645,26 @@ li:hover hr {
 input[type="range"] {
     -webkit-appearance: none;
     position: absolute;
-    max-width: 80px;
+    
     height: 5px;
     background-color: #c0c0c0;
    
     border-radius: 5px;
+
+    
+
     
 }
 
 input[type="range"]:hover {
+    
     background-color: #bbf458;
-    opacity: 1;
 }
+
+
+
+
+
 
 input[type="range"]:hover::-webkit-slider-thumb{
     background-color: white;
@@ -609,7 +678,14 @@ input[type="range"]::-webkit-slider-thumb {
     height: 20px;
     background-color: transparent; 
     border-radius: 50%;
+    
 }
+
+
+
+
+
+
 
 
 
@@ -743,6 +819,10 @@ input[type="range"]::-webkit-slider-thumb {
 
     .playlist-links::-webkit-scrollbar {
         width: 0;
+    }
+
+    .sidebar-bottom{
+        align-items: center;
     }
 
     .install-app{
