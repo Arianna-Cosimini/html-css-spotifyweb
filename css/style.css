@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+
+.fa-regular:hover,
+.fa-solid:hover{
+    color: white;
+}
+
 body{
     font-family: sans-serif;
     -ms-overflow-style: none;
@@ -125,6 +131,15 @@ body::-webkit-scrollbar-thumb {
 
 }
 
+.sidebar-menu li img:hover{
+    filter: grayscale(1);
+}
+
+#sidebar a:hover{
+    color: white;
+
+}
+
 
 
 
@@ -152,6 +167,10 @@ body::-webkit-scrollbar-thumb {
 
 }
 
+.playlist .fa-solid:hover{
+    color: white;
+}
+
 .btn-playlist{
     display: flex;
     gap: 10px;
@@ -161,7 +180,6 @@ body::-webkit-scrollbar-thumb {
 .playlist-links{
     max-height: 200px;
     overflow-y: auto;
-    /* height: calc(100% - 90px); */
 }
 
 .playlist-links::-webkit-scrollbar {
@@ -187,7 +205,6 @@ body::-webkit-scrollbar-thumb {
 .sidebar-bottom{
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     
 }
 
@@ -215,12 +232,11 @@ body::-webkit-scrollbar-thumb {
 
 /* fine sidebar */
 
+
+
 /* Inizio main */
 
 main {
-    background-color: #183d1d;
-    /* test */
-
     width: calc(100% - 230px);
 
     overflow-y: auto;
@@ -232,6 +248,8 @@ main {
     overflow-y: auto;
 
 }
+
+
 /* modifica scrollbar */
 main::-webkit-scrollbar {
     width: 12px; 
@@ -269,6 +287,8 @@ main::-webkit-scrollbar-track {
 
     text-align: right;
     padding-right: 10px;
+
+    z-index: 2;
 }
 
 .top-bar-btn{
@@ -276,6 +296,10 @@ main::-webkit-scrollbar-track {
     border: 1px solid white;
     border-radius: 50px;
     padding: 10px 40px;
+}
+
+.top-bar-btn:hover{
+    transform: scale(1.1);
 }
 
 .top-bar-btn a{
@@ -299,10 +323,36 @@ main::-webkit-scrollbar-track {
 }
 
 .nav-links ul li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     list-style-type: none;
     font-size: 2em;
 }
 
+.nav-links a{
+    text-decoration: none;
+    color: #6c6c6c;
+}
+
+li hr{
+    width: 50px;
+    height: 2px;
+    text-align: center;
+    background-color: #bbf458;
+    border-width: 0;
+    opacity: 0;
+}
+
+.nav-links a:hover,
+.nav-links a:active{
+    color: white;
+    
+}
+
+li:hover hr {
+    opacity: 1;
+}
 
 .container{
 
@@ -311,10 +361,6 @@ main::-webkit-scrollbar-track {
     gap: 16px;
     
     overflow-y: auto;
-    
-    /* margin-left: 247px;
-    height: calc(100vh - 90px);
-    overflow: auto; */
 
 }
 
@@ -444,8 +490,6 @@ main::-webkit-scrollbar-track {
     align-items: center;
     justify-content: space-between;
     gap: 40px;
-
-    /* padding: 20px 10px; */
     
     color: white;
 }
@@ -511,7 +555,7 @@ main::-webkit-scrollbar-track {
 
 .bottom-player .progress-bar{
     position: relative;
-    width: 30vw;
+    width: 20vw;
 }
 
 .player-bar .progress .fa-solid{
@@ -540,19 +584,21 @@ main::-webkit-scrollbar-track {
 input[type="range"] {
     -webkit-appearance: none;
     position: absolute;
-    width: 80px;
+    max-width: 80px;
     height: 5px;
     background-color: #c0c0c0;
    
     border-radius: 5px;
-    outline: none;
-    opacity: 0.7;
-    transition: opacity 0.2s;
+    
 }
 
 input[type="range"]:hover {
     background-color: #bbf458;
     opacity: 1;
+}
+
+input[type="range"]:hover::-webkit-slider-thumb{
+    background-color: white;
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -563,13 +609,10 @@ input[type="range"]::-webkit-slider-thumb {
     height: 20px;
     background-color: transparent; 
     border-radius: 50%;
-    cursor: pointer;
 }
 
 
-input[type="range"]::-webkit-slider-thumb:hover {
-    background: white; 
-}
+
 
 /* fine stilizzazione input range */
 
@@ -598,7 +641,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
 
 .sound-bar .progress-bar {
    
-    min-width: 120px;
+    width: 5vw;
     height: 4px;
     background-color:#5a5a5a;
     border-radius: 25px;
@@ -606,7 +649,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
 }
 
 .sound-bar input[type="range"]{
-    width: 50px;
+    max-width: 40px;
 }
 /* fine bottom-bar */
 
@@ -622,6 +665,8 @@ input[type="range"]::-webkit-slider-thumb:hover {
 }
 
 /* fine madia query laptop */
+
+
 
 /* media query tablet */
 
@@ -658,7 +703,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
         width: calc(100% / 2 - 16px / 2);
     }
 
-    .bottom-icon{
+    .bottom-bar-left .bottom-icon{
         flex-direction: column;
     }
 
@@ -669,6 +714,8 @@ input[type="range"]::-webkit-slider-thumb:hover {
 }
 
 /* fine media query tablet */
+
+
 
 /* media query smartphone */
 @media screen and (max-width: 576px) {
@@ -700,11 +747,15 @@ input[type="range"]::-webkit-slider-thumb:hover {
 
     .install-app{
         border-bottom: 0;
+        gap: 0;
+        justify-content: center;
     }
+
     .top-bar{
         width:calc(100% - 45px);
         padding-right: 10px;
     }
+
     .top-bar-btn{
         padding: 5px;
         text-align: center;
@@ -721,11 +772,12 @@ input[type="range"]::-webkit-slider-thumb:hover {
     .row p{
         text-align: center;
     }
+    
     .card{
     width:calc(100% / 2 - 16px)
     }
 
-    .bottom-icon{
+    .bottom-bar-left .bottom-icon{
         flex-direction: column;
     }
 
